@@ -2,7 +2,7 @@
   "name": "projectz",
   "version": "0.1.0",
   "private": false,
-  "homepage": "https://github.com/dartec-47/ecommerce-react-demo.git",
+  "homepage": "https://dartec-47.github.io/ecommerce-react-demo/",
   "dependencies": {
     "@cocart/cocart-rest-api": "^1.1.0",
     "@emotion/react": "^11.7.1",
