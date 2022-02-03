@@ -16,10 +16,7 @@ import CircularProgress from '@mui/material/CircularProgress';
 import { useNavigate } from 'react-router';
 
 const api = new WooCommerceRestApi({
-  url: "http://ecommerce-react-demo.x10.mx/wp/",
-  headers: {
-    "content-type": "application/x-www-form-urlencoded"
-  },
+  url: "https://ecommerce-react-demo.x10.mx/wp/",
   consumerKey: "ck_0fbeec789c4e12780070d60ebaccf11245dba721",
   consumerSecret: "cs_ba3eb67352f860a6ca7102fd9aca0b5242fcbd71",
   wpAPI: true,
