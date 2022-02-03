@@ -1,7 +1,7 @@
 {
   "name": "projectz",
   "version": "0.1.0",
-  "private": true,
+  "private": false,
   "dependencies": {
     "@cocart/cocart-rest-api": "^1.1.0",
     "@emotion/react": "^11.7.1",
