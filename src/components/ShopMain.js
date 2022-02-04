@@ -66,7 +66,7 @@ function ShopMain() {
     }, []);    
     
     let fetchCategories = () => {
-        api.get("products").then((response) => {
+        api.get("products/categories").then((response) => {
             if (response.status === 200) {
               setCategories(response.data);
               setLoaded(true);
@@ -81,7 +81,7 @@ function ShopMain() {
     let slideshow = []
     let maxSteps = categories.length - 1;
     if(loaded === true) {
-      slideshow = categories.filter(el => el.name !== 'Senza categoria');
+      slideshow = categories.filter(el => el);
     }
 
   return (
