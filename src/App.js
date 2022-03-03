@@ -19,6 +19,7 @@ function App() {
         <main>
           <Routes>
             <Route path="/ecommerce-react-demo" element={<Home />} />
+            <Route path="/" element={<Home />} />
             {
             //<Route path="/ecommerce-react-demo/shop/:path" element={<Buy />} />
             //<Route path="/ecommerce-react-demo/shop/details/:path" element={<ProductDetails />} />
