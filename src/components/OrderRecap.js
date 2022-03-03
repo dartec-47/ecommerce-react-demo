@@ -5,7 +5,8 @@ import TableRow from '@mui/material/TableRow';
 import Typography from '@mui/material/Typography';
 import CircularProgress from '@mui/material/CircularProgress';
 import WooCommerceRestApi from '@woocommerce/woocommerce-rest-api';
-import { useParams } from 'react-router-dom';
+import { Link, useParams } from 'react-router-dom';
+import { Button } from '@mui/material';
 
 const useStyles = makeStyles(() => 
     createStyles({
@@ -91,6 +92,8 @@ export default function SpanningTable() {
             ))}
             <Typography>{'Total: ' + order.total + " €"}</Typography>
             </div>
+            <Button component={Link} to={'/ecommerce-react-demo'}>Back to shop</Button>
+
         </>
       ) : (
         <>

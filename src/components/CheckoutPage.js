@@ -8,7 +8,7 @@ import TableHead from '@mui/material/TableHead';
 import TableRow from '@mui/material/TableRow';
 import Paper from '@mui/material/Paper';
 import { CartContext } from '../containers/CartContext';
-import { Button, IconButton } from '@mui/material';
+import { Backdrop, Button, CircularProgress, IconButton } from '@mui/material';
 import DeleteIcon from '@mui/icons-material/Delete';
 import AddIcon from '@mui/icons-material/Add';
 import RemoveIcon from '@mui/icons-material/Remove';
@@ -38,6 +38,7 @@ export default function SpanningTable() {
   const [cart, setCart] = useContext(CartContext)
   const [tot, setTot] = useState(0)
   const [billing, setBilling] = useState({})
+  const [backDrop, setBackdrop] = useState(false)
 
   const navigate = useNavigate()
 
@@ -72,6 +73,7 @@ export default function SpanningTable() {
   }
 
   let submitOrder= ()=> {
+    setBackdrop = true
     let info = billing;
     let lineItems = items;
 
@@ -80,11 +82,11 @@ export default function SpanningTable() {
       shipping: info,
       line_items: lineItems
     }
-
+    
     api.post("orders", order)
     .then(response=> {
       setCart([])
-      navigate(`/order/${response.data.id}`)
+      navigate(`/ecommerce-react-demo//order/${response.data.id}`)
     })
   }
 
@@ -151,9 +153,15 @@ export default function SpanningTable() {
       </Table>
     </TableContainer>
     <Button onClick={submitOrder}>Create Order</Button>
-    <Button component={Link} to={'/shop'}>Back to shop</Button>
+    <Button component={Link} to={'/ecommerce-react-demo/checkout'}>Back to shop</Button>
         </div>
         </div>
+            {backDrop === true && <Backdrop
+  sx={{ color: '#fff', zIndex: (theme) => theme.zIndex.drawer + 1 }}
+>
+  <CircularProgress color="inherit" />
+</Backdrop>}
     </>
+    
   );
 }

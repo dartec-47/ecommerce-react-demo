@@ -146,24 +146,6 @@ let fetchCategories = () => {
               >
                 shop
               </Button>
-              {loaded === true ? (
-                slideshow.map((category, index) => (
-                  <Button
-                  key={index}
-                  onClick={()=>navigate(`shop/${category.id}`)}
-                  sx={{ my: 2, color: 'white', display: 'block' }}
-                >
-                  {category.name}
-                </Button>
-                ))
-              ) : (
-                <Skeleton
-                  sx={{ bgcolor: 'grey.900', marginTop: '18px' }}
-                  variant="rectangular"
-                  width={500}
-                  height={30}
-                />
-              )}
           </Box>
 
           <Box sx={{ flexGrow: 0 }}>
